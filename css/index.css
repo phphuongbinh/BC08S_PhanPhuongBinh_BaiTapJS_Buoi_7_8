@@ -1,0 +1,18 @@
+.card-header {
+  background-color: rgba(150, 222, 218, 0.1);
+}
+
+.btn-link {
+  width: 100%;
+  text-align: left;
+  color: #000;
+}
+.btn-link:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+.btn-link.focus,
+.btn-link:focus {
+  text-decoration: none;
+  box-shadow: none;
+}

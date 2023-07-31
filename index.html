@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bài tập mảng</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- IconScout -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body style="background-image: linear-gradient(to right, #50c9c3, #96deda)">
+    <div class="container my-4 w-50 px-5 py-4 rounded shadow bg-white">
+      <div class="mb-4">
+        <div class="form-group w-50">
+          <label for="number">Thêm số vào mảng</label>
+          <input
+            type="number"
+            class="form-control"
+            id="number"
+            placeholder="Nhập số"
+          />
+        </div>
+        <button class="btn btn-success mb-2" id="add-btn">Add</button>
+        <div
+          class="p-2 rounded text-white d-flex"
+          style="
+            background: linear-gradient(
+              to right,
+              rgba(79, 201, 195),
+              rgba(150, 222, 218)
+            );
+          "
+        >
+          <i class="uil uil-navigator mr-2"></i>
+          <div id="arrayNumbers"></div>
+        </div>
+      </div>
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button
+                class="btn btn-link"
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                1 .Tổng số dương
+              </button>
+            </h5>
+          </div>
+
+          <div
+            id="collapseOne"
+            class="collapse show"
+            aria-labelledby="headingOne"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <button id="sumBtn" class="btn btn-success mb-4">
+                Tính tổng số dương
+              </button>
+              <div
+                class="p-2 rounded text-white d-flex"
+                style="background: linear-gradient(to right, #50c9c3, #96deda)"
+              >
+                <i class="uil uil-navigator mr-2"></i>
+                <div id="sumArray"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                data-toggle="collapse"
+                data-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                2. Đếm số dương
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseTwo"
+            class="collapse"
+            aria-labelledby="headingTwo"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <button id="countPositiveNumber" class="btn btn-success mb-4">
+                Đếm số dương
+              </button>
+              <div
+                class="p-2 rounded text-white d-flex"
+                style="background: linear-gradient(to right, #50c9c3, #96deda)"
+              >
+                <i class="uil uil-navigator mr-2"></i>
+                <div id="resultCountPositiveNumber"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                data-toggle="collapse"
+                data-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                3. Tìm số nhỏ nhất
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseThree"
+            class="collapse"
+            aria-labelledby="headingThree"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <button id="findMinNumber" class="btn btn-success mb-4">
+                TÌm số nhỏ nhất
+              </button>
+              <div
+                class="p-2 rounded text-white d-flex"
+                style="background: linear-gradient(to right, #50c9c3, #96deda)"
+              >
+                <i class="uil uil-navigator mr-2"></i>
+                <div id="resultMinNumber"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingFour">
+            <h5 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                data-toggle="collapse"
+                data-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseFour"
+              >
+                4. Tìm số dương nhỏ nhất
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseFour"
+            class="collapse"
+            aria-labelledby="headingFour"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <button id="findMinPositiveNumber" class="btn btn-success mb-4">
+                TÌm số dương nhỏ nhất
+              </button>
+              <div
+                class="p-2 rounded text-white d-flex"
+                style="background: linear-gradient(to right, #50c9c3, #96deda)"
+              >
+                <i class="uil uil-navigator mr-2"></i>
+                <div id="resultMinPositiveNumber"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingFive">
+            <h5 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                data-toggle="collapse"
+                data-target="#collapseFive"
+                aria-expanded="false"
+                aria-controls="collapseFive"
+              >
+                5. Tìm số chẵn cuối dùng
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseFive"
+            class="collapse"
+            aria-labelledby="headingFive"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <button id="findLastEvenNumber" class="btn btn-success mb-4">
+                TÌm số chẵn
+              </button>
+              <div
+                class="p-2 rounded text-white d-flex"
+                style="background: linear-gradient(to right, #50c9c3, #96deda)"
+              >
+                <i class="uil uil-navigator mr-2"></i>
+                <div id="resultLastEvenNumber"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingSix">
+            <h5 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                data-toggle="collapse"
+                data-target="#collapseSix"
+                aria-expanded="false"
+                aria-controls="collapseSix"
+              >
+                6. Đổi chỗ
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseSix"
+            class="collapse"
+            aria-labelledby="headingSix"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="form-group w-50 mx-2">
+                  <label for="firstNumberIndex">Nhập vào vị trí thứ 1</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="firstNumberIndex"
+                    placeholder="Nhập vào vị trí 1"
+                  />
+                </div>
+                <div class="form-group w-50 mx-2">
+                  <label for="secondNumberIndex">Nhập vào vị trí thứ 2</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="secondNumberIndex"
+                    placeholder="Nhập vào vị trí 2"
+                  />
+                </div>
+              </div>
+              <button id="transferNumber" class="btn btn-success mb-4">
+                Đổi chỗ
+              </button>
+              <div
+                class="p-2 rounded text-white d-flex"
+                style="background: linear-gradient(to right, #50c9c3, #96deda)"
+              >
+                <i class="uil uil-navigator mr-2"></i>
+                <div id="resultTransferNumber"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingSeven">
+            <h5 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                data-toggle="collapse"
+                data-target="#collapseSeven"
+                aria-expanded="false"
+                aria-controls="collapseSeven"
+              >
+                7. Sắp xếp tăng dần
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseSeven"
+            class="collapse"
+            aria-labelledby="headingSeven"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <button id="sortUpAscending" class="btn btn-success mb-4">
+                Sắp xếp
+              </button>
+              <div
+                class="p-2 rounded text-white d-flex"
+                style="background: linear-gradient(to right, #50c9c3, #96deda)"
+              >
+                <i class="uil uil-navigator mr-2"></i>
+                <div id="resultSortUpAscending"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingEight">
+            <h5 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                data-toggle="collapse"
+                data-target="#collapseEight"
+                aria-expanded="false"
+                aria-controls="collapseEight"
+              >
+                8. Tìm số nguyên tố đầu tiên
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseEight"
+            class="collapse"
+            aria-labelledby="headingEight"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <button id="findPrimeNumber" class="btn btn-success mb-4">
+                Tìm số nguyên tố
+              </button>
+              <div
+                class="p-2 rounded text-white d-flex"
+                style="background: linear-gradient(to right, #50c9c3, #96deda)"
+              >
+                <i class="uil uil-navigator mr-2"></i>
+                <div id="resultFindPrimeNumber"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingNine">
+            <h5 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                data-toggle="collapse"
+                data-target="#collapseNine"
+                aria-expanded="false"
+                aria-controls="collapseNine"
+              >
+                9. Đếm số nguyên
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseNine"
+            class="collapse"
+            aria-labelledby="headingNine"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <div>
+                <div class="form-group w-50 d-inline-block">
+                  <label for="floatNumber">Thêm số vào mảng</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="floatNumber"
+                    placeholder="Nhập số"
+                  />
+                </div>
+                <button class="btn btn-success mb-2 ml-2" id="btn-add-float">
+                  Add
+                </button>
+                <div
+                  class="p-2 rounded text-white d-flex mb-4"
+                  style="
+                    background: linear-gradient(to right, #50c9c3, #96deda);
+                  "
+                >
+                  <i class="uil uil-navigator mr-2"></i>
+                  <div id="arrayFloatNumbers"></div>
+                </div>
+              </div>
+              <button id="countIntegerNumber" class="btn btn-success mb-4">
+                Đếm số nguyên
+              </button>
+              <div
+                class="p-2 rounded text-white d-flex"
+                style="background: linear-gradient(to right, #50c9c3, #96deda)"
+              >
+                <i class="uil uil-navigator mr-2"></i>
+                <div id="resultCountIntegerNumber"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTen">
+            <h5 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                data-toggle="collapse"
+                data-target="#collapseTen"
+                aria-expanded="false"
+                aria-controls="collapseTen"
+              >
+                10. So sánh số lượng số âm và số dương
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseTen"
+            class="collapse"
+            aria-labelledby="headingTen"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <button
+                id="compareNegativeAndPositive"
+                class="btn btn-success mb-4"
+              >
+                So sánh
+              </button>
+              <div
+                class="p-2 rounded text-white d-flex"
+                style="background: linear-gradient(to right, #50c9c3, #96deda)"
+              >
+                <i class="uil uil-navigator mr-2"></i>
+                <div id="resultCompareNegativeAndPositive"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
