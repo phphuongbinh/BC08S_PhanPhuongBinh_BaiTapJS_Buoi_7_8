@@ -1,8 +1,8 @@
 let arrNumber = [];
-let arrDom = document.querySelector("#arrayNumbers");
 const addBtn = document.querySelector("#add-btn");
 
 const addNumberToArray = () => {
+  let arrDom = document.querySelector("#arrayNumbers");
   const number = document.querySelector("#number").value * 1;
   arrNumber.push(number);
   arrDom.innerHTML = arrNumber.join(", ");
@@ -31,24 +31,22 @@ btnSum.addEventListener("click", sumArray);
 
 // Đếm số dương
 
-const countPositiveNumber = document.querySelector("#countPositiveNumber");
-const resultCountPositiveNumber = document.querySelector(
-  "#resultCountPositiveNumber"
-);
+const btnCountPositiveNumber = document.querySelector("#countPositiveNumber");
 
 function countPositive() {
+  const result = document.querySelector("#resultCountPositiveNumber");
   let positive = arrNumber.filter((num) => num > 0).length;
-  resultCountPositiveNumber.innerHTML = `Số dương: ${positive}`;
+  result.innerHTML = `Số dương: ${positive}`;
 }
 
-countPositiveNumber.addEventListener("click", countPositive);
+btnCountPositiveNumber.addEventListener("click", countPositive);
 
 // Tìm số nhỏ nhất
 
 const findMinNumber = document.querySelector("#findMinNumber");
-const resultMinNumber = document.querySelector("#resultMinNumber");
 
 function findMin() {
+  const result = document.querySelector("#resultMinNumber");
   let min = arrNumber[0];
   for (let i = 0; i < arrNumber.length; i++) {
     if (min > arrNumber[i]) {
@@ -56,7 +54,7 @@ function findMin() {
     }
   }
 
-  resultMinNumber.innerHTML = `Số nhỏ nhất: ${min}`;
+  result.innerHTML = `Số nhỏ nhất: ${min}`;
 }
 
 findMinNumber.addEventListener("click", findMin);
@@ -66,22 +64,20 @@ findMinNumber.addEventListener("click", findMin);
 const btnFindMinPositiveNumber = document.querySelector(
   "#findMinPositiveNumber"
 );
-const resultMinPositiveNumber = document.querySelector(
-  "#resultMinPositiveNumber"
-);
 
 function findMinPositiveNumber() {
+  const result = document.querySelector("#resultMinPositiveNumber");
   let newArr = arrNumber.filter((num) => num > 0);
   let min = newArr[0];
   if (newArr.length === 0) {
-    resultMinPositiveNumber.innerHTML = `Không có số dương`;
+    result.innerHTML = `Không có số dương`;
   } else {
     newArr.forEach((num) => {
       if (num < min) {
         min = num;
       }
     });
-    resultMinPositiveNumber.innerHTML = `Số dương nhỏ nhất là: ${min}`;
+    result.innerHTML = `Số dương nhỏ nhất là: ${min}`;
   }
 }
 
@@ -90,14 +86,14 @@ btnFindMinPositiveNumber.addEventListener("click", findMinPositiveNumber);
 // Tìm số chẵn cuối cùng
 
 const btnFindLastEvenNumber = document.querySelector("#findLastEvenNumber");
-const resultLastEvenNumber = document.querySelector("#resultLastEvenNumber");
 function findLastEvenNumber() {
+  const result = document.querySelector("#resultLastEvenNumber");
   let newArr = arrNumber.filter((num) => num % 2 === 0);
   if (newArr.length == 0) {
     resultLastEvenNumber.innerHTML = `Không có số chẵn`;
   } else {
     let lastEvenNumber = newArr[newArr.length - 1];
-    resultLastEvenNumber.innerHTML = `Số chẵn cuối cùng là: ${lastEvenNumber}`;
+    result.innerHTML = `Số chẵn cuối cùng là: ${lastEvenNumber}`;
   }
 }
 
@@ -106,18 +102,16 @@ btnFindLastEvenNumber.addEventListener("click", findLastEvenNumber);
 // Đổi chỗ 2 giá trị trong mảng theo vị trí
 
 const btnTransferNumber = document.querySelector("#transferNumber");
-const resultTransferNumber = document.querySelector("#resultTransferNumber");
 
 function transferTwoNumber() {
+  const result = document.querySelector("#resultTransferNumber");
   const firstIndexValue = document.querySelector("#firstNumberIndex").value * 1;
   const secondIndexValue =
     document.querySelector("#secondNumberIndex").value * 1;
   let tempVar = arrNumber[firstIndexValue];
   arrNumber[firstIndexValue] = arrNumber[secondIndexValue];
   arrNumber[secondIndexValue] = tempVar;
-  resultTransferNumber.innerHTML = `Mảng sau khi đổi chỗ là: ${arrNumber.join(
-    ", "
-  )}`;
+  result.innerHTML = `Mảng sau khi đổi chỗ là: ${arrNumber.join(", ")}`;
 }
 
 btnTransferNumber.addEventListener("click", transferTwoNumber);
@@ -125,13 +119,11 @@ btnTransferNumber.addEventListener("click", transferTwoNumber);
 // Sắp xếp tăng dần
 
 const btnSortUpAscending = document.querySelector("#sortUpAscending");
-const resultSortUpAscending = document.querySelector("#resultSortUpAscending");
 
 function sortUpAscending() {
+  const result = document.querySelector("#resultSortUpAscending");
   let newArr = arrNumber.sort((a, b) => a - b);
-  resultSortUpAscending.innerHTML = `Mảng sau khi sắp xếp là: ${newArr.join(
-    ", "
-  )}`;
+  result.innerHTML = `Mảng sau khi sắp xếp là: ${newArr.join(", ")}`;
 }
 
 btnSortUpAscending.addEventListener("click", sortUpAscending);
@@ -139,12 +131,12 @@ btnSortUpAscending.addEventListener("click", sortUpAscending);
 // Tìm số nguyên tố đầu tiên
 
 const btnFindPrimeNumber = document.querySelector("#findPrimeNumber");
-const resultFindPrimeNumber = document.querySelector("#resultFindPrimeNumber");
 
 function findFirstPrimeNumber() {
+  const result = document.querySelector("#resultFindPrimeNumber");
   let newArr = arrNumber.filter((num) => num > 0);
   if (newArr.length === 0) {
-    resultFindPrimeNumber.innerHTML = `Không có số nguyên tố`;
+    result.innerHTML = `Không có số nguyên tố`;
   } else {
     arrNumber.forEach((num) => {
       for (let i = 2; i < num; i++) {
@@ -156,9 +148,9 @@ function findFirstPrimeNumber() {
       }
     });
     if (newArr.length == 0) {
-      resultFindPrimeNumber.innerHTML = `Không có số nguyên tố`;
+      result.innerHTML = `Không có số nguyên tố`;
     } else {
-      resultFindPrimeNumber.innerHTML = `
+      result.innerHTML = `
       Số nguyên tố đầu tiên là: ${newArr[0]}`;
     }
   }
@@ -166,15 +158,13 @@ function findFirstPrimeNumber() {
 
 btnFindPrimeNumber.addEventListener("click", findFirstPrimeNumber);
 
-// Đếm số nguyên
-
 // Thêm mảng số thực
 
 let arrFloatNumbers = [];
-let arrFloatDom = document.querySelector("#arrayFloatNumbers");
 const addFloatBtn = document.querySelector("#btn-add-float");
 
 const addFloatNumberToArray = () => {
+  let arrFloatDom = document.querySelector("#arrayFloatNumbers");
   const floatNumber = document.querySelector("#floatNumber").value * 1;
   arrFloatNumbers.push(floatNumber);
   arrFloatDom.innerHTML = arrFloatNumbers.join(", ");
@@ -182,13 +172,13 @@ const addFloatNumberToArray = () => {
 addFloatBtn.addEventListener("click", addFloatNumberToArray);
 
 const btnCountIntegerNumber = document.querySelector("#countIntegerNumber");
-const resultCountIntegerNumber = document.querySelector(
-  "#resultCountIntegerNumber"
-);
+
+// Đếm số nguyên
 
 function countInteger() {
+  const result = document.querySelector("#resultCountIntegerNumber");
   let newArr = arrFloatNumbers.filter((num) => Number.isInteger(num));
-  resultCountIntegerNumber.innerHTML = `Số nguyên: ${newArr.length}`;
+  result.innerHTML = `Số nguyên: ${newArr.length}`;
 }
 
 btnCountIntegerNumber.addEventListener("click", countInteger);
@@ -198,20 +188,18 @@ btnCountIntegerNumber.addEventListener("click", countInteger);
 const btnCompareNegativeAndPositive = document.querySelector(
   "#compareNegativeAndPositive"
 );
-const resultCompareNegativeAndPositive = document.querySelector(
-  "#resultCompareNegativeAndPositive"
-);
 
 function compareNegativeAndPositive() {
+  const result = document.querySelector("#resultCompareNegativeAndPositive");
   let arrNegative = arrNumber.filter((num) => num < 0);
   let arrPositive = arrNumber.filter((num) => num > 0);
 
   if (arrNegative.length > arrPositive.length) {
-    resultCompareNegativeAndPositive.innerHTML = `Số âm > Số dương`;
+    result.innerHTML = `Số âm > Số dương`;
   } else if (arrNegative.length < arrPositive.length) {
-    resultCompareNegativeAndPositive.innerHTML = `Số âm < Số dương`;
+    result.innerHTML = `Số âm < Số dương`;
   } else {
-    resultCompareNegativeAndPositive.innerHTML = `Số âm = Số dương`;
+    result.innerHTML = `Số âm = Số dương`;
   }
 }
 
